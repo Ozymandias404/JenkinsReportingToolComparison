@@ -30,7 +30,6 @@ agent any
     }
     post {
         always {
-            junit 'features/reports/*.xml'
             echo 'End of pipeline!'
         }
     }
