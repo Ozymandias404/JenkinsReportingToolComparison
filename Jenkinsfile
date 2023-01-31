@@ -4,7 +4,9 @@ agent any
         stage('Script') {
             agent any
             steps {
-                sh "behave test1.feature"
+                dir("features"){
+                    sh "behave test1.feature"
+                }
             }
         }
     }
