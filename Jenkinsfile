@@ -12,6 +12,7 @@ agent any
             }
             post {
                 always {
+                    junit 'features/reports/*.xml'
                     script {
                         allure([
                             includeProperties: false,
@@ -29,6 +30,7 @@ agent any
     }
     post {
         always {
+            junit 'features/reports/*.xml'
             echo 'End of pipeline!'
         }
     }
