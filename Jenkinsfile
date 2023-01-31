@@ -13,7 +13,17 @@ agent any
             post {
                 always {
                     junit 'features/reports/*.xml'
-                    sh "allure generate features/reports"
+                    script {
+                        allure([
+                            includeProperties: false,
+                            jdk: '',
+                            properties: [],
+                            reportBuildPolicy: 'ALWAYS',
+                            results: [
+                                [path: 'features/reports']
+                            ]
+                        ])
+                    }
                 }
             }
         }
