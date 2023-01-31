@@ -10,6 +10,24 @@ agent any
                     sh "pwd"
                 }
             }
+            post {
+                always {
+                    dir("selenium-aws/tests"){
+                        junit 'reports/*.xml'
+                        script {
+                            allure([
+                                includeProperties: false,
+                                jdk: '',
+                                properties: [],
+                                reportBuildPolicy: 'ALWAYS',
+                                results: [
+                                    [path: 'reports']
+                                ]
+                            ])
+                        }
+                    }
+                }
+            }
         }
     }
     post {
