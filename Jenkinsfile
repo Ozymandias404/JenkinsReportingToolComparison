@@ -13,7 +13,7 @@ agent any
             post {
                 always {
                     junit 'features/reports/*.xml'
-                    sh 'allure generate features/reports'
+                    sh "allure generate features/reports"
                 }
             }
         }
