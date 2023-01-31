@@ -5,7 +5,7 @@ agent any
             agent any
             steps {
                 dir("features"){
-                    sh "behave --junit test1.feature"
+                    sh "behave --junit \"test1.feature\" \"test2.feature\" \"test3.feature\""
                     sh "ls -a"
                     sh "pwd"
                 }
