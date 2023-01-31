@@ -6,6 +6,7 @@ agent any
             steps {
                 dir("features"){
                     sh "behave test1.feature"
+                    sh "behave --junit"
                 }
             }
         }
