@@ -7,6 +7,8 @@ agent any
                 dir("features"){
                     sh "behave --junit test1.feature"
                 }
+                sh 'ls -a'
+                sh 'pwd'
             }
         }
     }
