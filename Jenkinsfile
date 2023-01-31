@@ -7,6 +7,7 @@ agent any
                 sh "behave test1.feature"
             }
         }
+    }
     post {
         always {
             echo 'End of pipeline!'
